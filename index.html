@@ -7,41 +7,43 @@
     <title> Projetos LS - Calculadora </title>
     <link rel="icon" type="imagem/jpg" href="_imagens/calculadora.png" />
     <link rel="stylesheet" href="styles.css"/>
+    <script src="index.js"></script> 
 </head>
 <body>
     <div class="calculadora">
-        <div class="calcDisplay"> </div>
+        <div class="calcDisplay"> <p id="resultado"> </p></div>
         <div class="calcOperadores">
-            <div>
-                <button class="number"><div id="One" class="numbersColumn" style="grid-column: 1;"> 1 </div></button>
-                <button class="number"><div id="Four" class="numbersColumn" style="grid-column: 1;"> 4 </div></button>
-                <button class="number"><div id="Seven" class="numbersColumn" style="grid-column: 1;"> 7 </div></button>      
-                <button class="number"><div id="Zero" class="numbersColumn" style="grid-column: 1;"> 0 </div></button>     
+            <div class="keysColumns">
+                <button class="number" onclick="insert('1')"><div id="One" class="numbersColumn" style="grid-column: 1;"> 1 </div></button>
+                <button class="number" onclick="insert('4')"><div id="Four" class="numbersColumn" style="grid-column: 1;"> 4 </div></button>
+                <button class="number" onclick="insert('7')"><div id="Seven" class="numbersColumn" style="grid-column: 1;"> 7 </div></button>      
+                <button class="number" onclick="insert('0')"><div id="Zero" class="numbersColumn" style="grid-column: 1;"> 0 </div></button>     
             </div>
 
-            <div class="numbersColumn2">
-                <button class="number"><div id="Two" class="numbersColumn" style="grid-column: 2;"> 2 </div></button>     
-                <button class="number"><div id="Five" class="numbersColumn" style="grid-column: 2;"> 5 </div></button>     
-                <button class="number"><div id="Eight" class="numbersColumn" style="grid-column: 2;"> 8 </div></button>       
-                <button class="number"><div id="Dot" class="numbersColumn" style="grid-column: 2;"> . </div></button>  
+            <div class="keysColumns">
+                <button class="number" onclick="insert('2')"><div id="Two" class="numbersColumn" style="grid-column: 2;"> 2 </div></button>     
+                <button class="number" onclick="insert('5')"><div id="Five" class="numbersColumn" style="grid-column: 2;"> 5 </div></button>     
+                <button class="number" onclick="insert('8')"><div id="Eight" class="numbersColumn" style="grid-column: 2;"> 8 </div></button>       
+                <button class="number" onclick="insert('.')"><div id="Decimal" class="numbersColumn" data-action="decimal" style="grid-column: 2;"> . </div></button>  
             </div>
 
-            <div class="numbersColumn3">
-                <button class="number"><div id="Three" class="numbersColumn" style="grid-column: 3;"> 3 </div></button>    
-                <button class="number"><div id="Six" class="numbersColumn" style="grid-column: 3;"> 6 </div></button>    
-                <button class="number"><div id="Nine" class="numbersColumn" style="grid-column: 3;"> 9 </div></button>      
-                <button class="number"><div id="Clear" class="numbersColumn" style="grid-column: 3;"> AC </div></button> 
+            <div class="keysColumns">
+                <button class="number" onclick="insert('3')"><div id="Three" class="numbersColumn" style="grid-column: 3;"> 3 </div></button>    
+                <button class="number" onclick="insert('6')"><div id="Six" class="numbersColumn" style="grid-column: 3;"> 6 </div></button>    
+                <button class="number" onclick="insert('9')"><div id="Nine" class="numbersColumn" style="grid-column: 3;"> 9 </div></button>      
+                <button class="number" onclick="clean()"><div id="Clear" class="numbersColumn" data-action="limpar" style="grid-column: 3;"> AC </div></button> 
             </div>
 
-            <div> 
-                <button class="operador"><div id="mais" class="operadores" style="grid-column: 4;"> + </div></button>
-                <button class="operador"><div id="menos" class="operadores" style="grid-column: 4;"> - </div></button>
-                <button class="operador"><div id="multiplicacao" class="operadores" style="grid-column: 4;"> &times; </div></button>
-                <button class="operador"><div id="divisao" class="operadores" style="grid-column: 4;"> ÷ </div></button>
+            <div class="keysColumns"> 
+                <button class="operador" onclick="insert('+')"><div id="mais" class="operadores" data-action="soma" style="grid-column: 4;"> + </div></button>
+                <button class="operador" onclick="insert('-')"><div id="menos" class="operadores" data-action="subtracao"style="grid-column: 4;"> - </div></button>
+                <button class="operador" onclick="insert('*')"><div id="multiplicacao" class="operadores" data-action="multiplicacao" style="grid-column: 4;"> &times; </div></button>
+                <button class="operador" onclick="insert('/')"><div id="divisao" class="operadores" data-action="divisao" style="grid-column: 4;"> ÷ </div></button>
             </div>
 
-            <div class="result">
-                <button class="operador"><div id="igual" class="operadores"> = </div>
+            <div class="keysColumns">
+                <button class="operador" onclick="deletar()"><div id="delete" class="operadores"><img height="24" width="24" src="_imagens/excluir.png"></div></button>
+                <button class="operador" onclick="calcular()"><div id="igual" class="operadores"> = </div></button>
             </div>
         </div>
     </div>
