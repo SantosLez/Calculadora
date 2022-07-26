@@ -27,10 +27,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 25px;
 }
 
 .imgOperadores img {
-
     height: 50px;
     width: 50px;
 }
@@ -40,24 +40,42 @@ body {
     height: 156.4px;
     width: auto;
     margin: 35px 35px 15px 35px;
+    border-radius: 10px;
 }
 
 .calcOperadores {
-    background-color: rgb(215, 235, 252);
+    background-color: rgba(216, 216, 216, 0.667);
     height: 445px;
     width: auto;
     margin: 15px 35px 35px 35px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    border-radius: 10px;
 }
 
 .numbersColumn, .operadores {
-    height: 111px;
-    width: 100px;
+    height: 107px;
+    width: 102px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px lightgray;
+    border-radius: 5px;
+}
+
+.numbersColumn button, .operadores button {
+    font-size: 28px;
+    background-color: transparent;
+    border: none;
 }
 
 .number, .operador {
     text-align: center;
+    background-color: transparent;
+}
+
+#igual button {
+    height: 445px;
 }
 
 
