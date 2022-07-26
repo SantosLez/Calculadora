@@ -1,85 +1,325 @@
-body {
-    /* background-size: 150% 150%; */
-    background-image: linear-gradient(-45deg, #ffc375cb, #ffc375cb, #ff5050a8, #ff5050a8);
-    animation: mygradient 2s ease infinite;
-    top: 0;
-    left: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Roboto:wght@300&display=swap');
 
-@keyframes mygradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: mandatory;
+        }
 
-.calculadora {
-    background-color: aliceblue;
-    position: absolute;
-    z-index: 1;
-    height: 685px;
-    width: 600px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 25px;
-}
+        body {
+            height: 100%;
+            width: auto;
+            margin: 0px;
+            padding: 0px;
+        }
 
-.imgOperadores img {
-    height: 50px;
-    width: 50px;
-}
-
-.calcDisplay {
-    background-color: rgb(50, 51, 54);
-    height: 156.4px;
-    width: auto;
-    margin: 35px 35px 15px 35px;
-    border-radius: 10px;
-}
-
-.calcOperadores {
-    background-color: rgba(216, 216, 216, 0.667);
-    height: 445px;
-    width: auto;
-    margin: 15px 35px 35px 35px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    border-radius: 10px;
-}
-
-.numbersColumn, .operadores {
-    height: 107px;
-    width: 102px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid 2px lightgray;
-    border-radius: 5px;
-}
-
-.numbersColumn button, .operadores button {
-    font-size: 28px;
-    background-color: transparent;
-    border: none;
-}
-
-.number, .operador {
-    text-align: center;
-    background-color: transparent;
-}
-
-#igual button {
-    height: 445px;
-}
+        /* #container {
+            background-color: white;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+         } */
 
 
 
+         /* Cabeçalho */
+         .imgHeader {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-size: 150% 150%;
+            background-image: linear-gradient(-45deg, rgb(48, 49, 51), #184c92, #23a6d5, #23d5ab);
+            animation: mygradient 2s ease infinite;
+            height: 44vw;
+            width: 100%;
+            top: 0;
+            display: block;
+            grid-template-columns: 1fr;
+         }
+
+         @keyframes mygradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+         #header {
+            height: 48vw;
+            width: 100%;
+         }
 
 
 
+        /* Menu Horizontal */ 
+        nav {
+            background-color: rgba(255, 255, 255, 0.8);
+            height: 4vw;
+            width: 100%;
+            position: relative;
+            display: inline-flex;
+            justify-content: space-between; 
+            align-items: center;
+            
+        }
+
+        .navIcon {
+            list-style-type: none;
+         }
+
+         #navIcon {
+            height: 2.5vw;
+            width: 2.5vw;
+         }
+
+         .menu li {
+            display: inline-flex;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1vw;
+            padding: 2.5px 50px 2.5px 50px;
+            text-align: center; 
+         }
+
+         .menu li:hover {
+            /* color: #3b3a3a; */
+            -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            transform: scale(1.1);
+         }
+
+         .menu a {
+            cursor: pointer;
+            text-decoration: none;
+         }
+
+
+
+         /* Feed de boxes */
+         #feedLinguagens, #feedFrameworks {
+            height: auto;
+            margin: 0% 8% 1% 8%;
+            padding: 30px 5% 40px 5%;
+            display: block;
+         }
+
+         #feedLinguagens section, #feedFrameworks section {
+            padding: 40px 0 40px 0;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+         }
+
+         .box {
+            background-color: rgb(247, 247, 247);
+            height: 350px;
+            width: 250px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            border-radius: 5px;
+            box-shadow: 0px 0px 6px rgb(125, 125, 125);
+            -webkit-box-shadow: 0px 0px 6px rgb(125, 125, 125);
+            -moz-box-shadow: 0px 0px 6px rgb(125, 125, 125); 
+            transition: 0.5s;
+         }
+
+         .imgBox {
+            height: 120px;
+            width: 120px;
+         }
+
+         .box:hover {
+            box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+            -webkit-transform: rotateZ(-1.5deg);
+            -ms-transform: rotateZ(-1.5deg);
+            transform: rotateZ(-1.5deg);
+            transition: 0.5s;
+         }
+
+         #buttonScroll {
+            height: 20px;
+            width: 20px;
+            background-color: rgb(209, 209, 209);
+            border-radius: 50%;
+            z-index: 2;
+         }
+
+         .buttonScroll {
+            padding: 6px 10px 10px 10px;
+            background-color: rgb(209, 209, 209);
+            border-radius: 100%;
+            position: fixed;
+            right: 2%;
+            bottom: 2%;
+            transition: 0.6s;
+            z-index: 1;
+            overflow: auto;
+         }
+
+         .buttonScroll:hover {
+            opacity: 0.6;
+            transition: 0.2s;
+         }
+
+
+
+         /* Popup Box */
+         .popupBox {
+            background-color: rgb(247, 247, 247);
+            height: 500px;
+            width: 500px;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            display: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+         }
+
+
+
+         /* Rodapé */
+         #footer {
+            background-color: rgb(48, 49, 51);
+            height: 10vh;
+            display: grid;
+            grid-template-columns: 1fr;
+         }
+
+
+
+         /* Background Modal */
+         .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+         }   
+ 
+         /* Modal Content/Box */
+         .modal-content {
+            background-color: #fefefe;
+            margin: 10vw auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            border-radius: 5px;
+            height: 30vw;
+            width: 70vw; /* Could be more or less, depending on screen size */
+         }
+ 
+         /* The Close Button */
+         .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+         }
+         
+         .close:hover,
+         .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+         }
+
+
+
+         /* Div backfrontEnd */
+         #TypeDev {
+            background-color: #23a6d5;
+            height: 650px;
+            width: 100%;
+            padding: 0px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+         }
+         
+
+         .frontEnd {
+            background-color: #23d5ab;
+            color:rgb(247, 247, 247);
+            grid-column: 1;
+         }
+
+         .backEnd {
+            background-color: #3a7a91;
+            color:rgb(247, 247, 247);
+            grid-column: 2;
+         }
+
+         .fullStack {
+            background-color: #773a91;
+            color:rgb(247, 247, 247);
+            grid-column: 3;
+         }
+
+         .frontEnd img, .backEnd img, .fullStack img {
+            height: 120px;
+            width: 120px;
+            text-align: left;
+            margin-top: 6%;
+            margin-left: 8%;
+            margin-bottom: 3%;
+         }
+
+         .frontEnd p, .backEnd p, .fullStack p {
+            text-align: center;
+            padding: 0px 0px 0px 30px;
+            display: inline;
+            font-size: 30px;
+         }
+
+   
+
+
+
+         /* Scrollbar */
+         ::-webkit-scrollbar {
+            width: 5px;
+         }
+
+         ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+         }
+         
+         ::-webkit-scrollbar-thumb {
+            background: rgb(188, 188, 188); 
+         }
+         
+         ::-webkit-scrollbar-thumb:hover {
+            display: inherit;
+            background: rgb(140, 140, 140); 
+         }
+
+
+
+         /* Add Zoom Animation */
+      .animate {
+         -webkit-animation: animatezoom 0.6s;
+         animation: animatezoom 0.6s;
+      }
+      
+      @-webkit-keyframes animatezoom {
+         from {-webkit-transform: scale(0)} 
+         to {-webkit-transform: scale(1)}
+      }
+         
+      @keyframes animatezoom {
+         from {transform: scale(0)} 
+         to {transform: scale(1)}
+      }
