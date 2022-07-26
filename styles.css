@@ -42,6 +42,13 @@ body {
     background-color: rgb(60, 61, 66);
     height: 156.4px;
     width: auto;
+    color: rgb(255, 255, 255);
+    font-size: clamp(3.5em, 3.5em + 10vw, 3.5em);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 40px;
     margin: 35px 35px 15px 35px;
     border-radius: 5px;
 }
@@ -70,15 +77,20 @@ body {
     font-size: 28px;;
 }
 
-button.number, .operador {
+button.number, button.operador {
     text-align: center;
     background-color: transparent;
     border: none;
     padding: 0;
+    transition: 0.1s;
 }
 
-#igual.operadores {
-    height: 440px;
+button.number:hover, button.operador:hover {
+    background-color: rgb(218, 218, 218);;
+}
+
+#igual.operadores, #delete.operadores {
+    height: 218px;
 }
 
 
